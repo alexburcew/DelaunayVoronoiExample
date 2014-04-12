@@ -14,16 +14,17 @@ namespace Lipshits
         static void Main(string[] args)
         {
             var vertices = new List<Vertex>();
-            var dataset = DataSet.Open(@"‪C:\Users\Alexandr.Burtsev\Downloads\ghcn_slice_3251.nc");
-            var lon = dataset.GetData<Single[]>("lon");
+            var dataset = DataSet.Open(@"‪C:\Users\Alexandr.Burtsev\Downloads\GHCN_monthly.nc");
+            var t = dataset.GetData<double[,]>("temp_mean");
             var lat = dataset.GetData<Single[]>("lat");
-            var t = dataset.GetData<int[]>("temp");
+            var lon = dataset.GetData<Single[]>("lon");
+            var s = dataset.GetData<double[,]>("temp_sigma");
 
-            for (int i = 0; i < t.Length; i++)
+            for (int i = 0; i < t.GetLength(1); i++)
             {
-                if (t[i] != -9999)
+                if (t[1, i] != -9999)
                 {
-                    vertices.Add(new Vertex(lon[i], lat[i], t[i]));
+                    vertices.Add(new Vertex(lon[i], lat[i], t[1, i], s[1, i]));
                 }
             }
 
@@ -31,7 +32,20 @@ namespace Lipshits
             Delaunay_Voronoi dv = new Delaunay_Voronoi(vertices, true);
 
             var tim = DateTime.Now;
-            List<Vertex> f = dv.NatNearestInterpolation(-110, 30, -50, -10, 100, 100, true, true, true);
+            var f = dv.crossadd(true);
+
+            int kvgood = 0;
+            double kmax = 0.0;
+            foreach (var ry in f)
+            {
+                double param2 = Math.Abs(ry.CrossValue - ry.Value);
+                if (param2 < ry.Sigma + ry.GetUncertainty) kvgood += 1; else if (!double.IsNaN(-(ry.Sigma + ry.GetUncertainty) + param2)) kmax = Math.Max(kmax, -(ry.Sigma + ry.GetUncertainty) + param2);
+                //ry.Value = ry.CrossValue;
+                ry.Value = ry.Sigma + ry.GetUncertainty;
+            }
+
+
+
             Console.WriteLine("Interpolation: {0}", DateTime.Now - tim);
             Console.WriteLine("Total time: {0}", DateTime.Now - fh);
 
@@ -51,22 +65,22 @@ namespace Lipshits
                 lon2[y] = (Single)u.Longitude;
                 lat2[y] = (Single)u.Latitude;
                 temp2[y] = (Single)u.Value;
-                uncert2[y] = (Single)u.GetR_LV;
+                uncert2[y] = (Single)u.Sigma;
                 y++;
             }
 
-
-            dataset.Add<Single[]>("CornInterpolation");
-            dataset.Add<Single[]>("UncertCornInterpolation");
+            dataset.Add<Single[]>("InterpolationValue");
+            dataset.Add<Single[]>("InterpolationUncert");
             dataset.Add<Single[]>("lon2");
             dataset.Add<Single[]>("lat2");
             dataset.PutData<Single[]>("lon2", lon2);
             dataset.PutData<Single[]>("lat2", lat2);
-            dataset.PutData<Single[]>("CornInterpolation", temp2);
-            dataset.PutData<Single[]>("UncertCornInterpolation", uncert2);
-
+            dataset.PutData<Single[]>("InterpolationValue", temp2);
+            dataset.PutData<Single[]>("InterpolationUncert", uncert2);
+            Console.WriteLine("kvgood: {0} - {1}.", 100.0 * kvgood / f.Count, kmax);
             Console.WriteLine("ok");
             dataset.View();
+
         }
     }
 }

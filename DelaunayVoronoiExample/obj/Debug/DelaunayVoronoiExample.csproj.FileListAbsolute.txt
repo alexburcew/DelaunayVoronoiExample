@@ -16,3 +16,14 @@ C:\Users\Alexandr.Burtsev\Documents\Visual Studio 2012\Projects\DelaunayVoronoiE
 C:\Users\Alexandr.Burtsev\Documents\Visual Studio 2012\Projects\DelaunayVoronoiExample\DelaunayVoronoiExample\bin\Debug\Delaunay-Voronoi_Library.pdb
 C:\Users\Alexandr.Burtsev\Documents\Visual Studio 2012\Projects\DelaunayVoronoiExample\DelaunayVoronoiExample\bin\Debug\Delaunay-Voronoi_Library.xml
 C:\Users\Alexandr.Burtsev\Documents\Visual Studio 2012\Projects\DelaunayVoronoiExample\DelaunayVoronoiExample\obj\Debug\DelaunayVoronoiExample.csprojResolveAssemblyReference.cache
+C:\Users\Alexandr.Burtsev\Documents\Visual Studio 2012\Projects\cross\DelaunayVoronoiExample\DelaunayVoronoiExample\bin\Debug\DelaunayVoronoiExample.exe.config
+C:\Users\Alexandr.Burtsev\Documents\Visual Studio 2012\Projects\cross\DelaunayVoronoiExample\DelaunayVoronoiExample\obj\Debug\DelaunayVoronoiExample.exe
+C:\Users\Alexandr.Burtsev\Documents\Visual Studio 2012\Projects\cross\DelaunayVoronoiExample\DelaunayVoronoiExample\obj\Debug\DelaunayVoronoiExample.pdb
+C:\Users\Alexandr.Burtsev\Documents\Visual Studio 2012\Projects\cross\DelaunayVoronoiExample\DelaunayVoronoiExample\bin\Debug\DelaunayVoronoiExample.exe
+C:\Users\Alexandr.Burtsev\Documents\Visual Studio 2012\Projects\cross\DelaunayVoronoiExample\DelaunayVoronoiExample\bin\Debug\DelaunayVoronoiExample.pdb
+C:\Users\Alexandr.Burtsev\Documents\Visual Studio 2012\Projects\cross\DelaunayVoronoiExample\DelaunayVoronoiExample\bin\Debug\Delaunay-Voronoi_Library.dll
+C:\Users\Alexandr.Burtsev\Documents\Visual Studio 2012\Projects\cross\DelaunayVoronoiExample\DelaunayVoronoiExample\bin\Debug\Delaunay-Voronoi_Library.pdb
+C:\Users\Alexandr.Burtsev\Documents\Visual Studio 2012\Projects\cross\DelaunayVoronoiExample\DelaunayVoronoiExample\bin\Debug\Delaunay-Voronoi_Library.xml
+C:\Users\Alexandr.Burtsev\Documents\Visual Studio 2012\Projects\cross\DelaunayVoronoiExample\DelaunayVoronoiExample\obj\Debug\DelaunayVoronoiExample.csprojResolveAssemblyReference.cache
+C:\Users\Alexandr.Burtsev\Documents\Visual Studio 2012\Projects\cross\DelaunayVoronoiExample\DelaunayVoronoiExample\obj\Debug\DelaunayVoronoiExample.Properties.Resources.resources
+C:\Users\Alexandr.Burtsev\Documents\Visual Studio 2012\Projects\cross\DelaunayVoronoiExample\DelaunayVoronoiExample\obj\Debug\DelaunayVoronoiExample.csproj.GenerateResource.Cache

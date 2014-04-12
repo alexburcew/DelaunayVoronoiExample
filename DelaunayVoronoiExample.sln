@@ -2,6 +2,9 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DelaunayVoronoiExample", "DelaunayVoronoiExample\DelaunayVoronoiExample.csproj", "{BBCC1952-1582-41FC-A124-87C807925AE7}"
+	ProjectSection(ProjectDependencies) = postProject
+		{97F3D566-C191-4468-A4E7-503195F45A4C} = {97F3D566-C191-4468-A4E7-503195F45A4C}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Delaunay-Voronoi_Library", "..\Delaunay_Voronoi_Library\Delaunay-Voronoi_Library\Delaunay-Voronoi_Library.csproj", "{97F3D566-C191-4468-A4E7-503195F45A4C}"
 EndProject
@@ -22,8 +25,5 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(Performance) = preSolution
-		HasPerformanceSessions = true
 	EndGlobalSection
 EndGlobal
